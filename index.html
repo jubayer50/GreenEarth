@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Earth</title>
+
+    <!-- link favicon -->
+    <link
+      rel="shortcut icon"
+      href="./assets/hero-leaf1.png"
+      type="image/x-icon"
+    />
+
+    <!-- link css -->
+    <link rel="stylesheet" href="./style/style.css" />
+
+    <!-- font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- tailwind + daisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <nav class="bg-[#15803D]">
+      <div class="max-w-[1920px] mx-auto">
+        <div class="navbar shadow-sm">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="-1"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              >
+                <li><a>About</a></li>
+                <li>Gallery</li>
+                <li><a>Plant a Tree</a></li>
+              </ul>
+            </div>
+            <a
+              class="text-white sm:font-bold sm:text-2xl text-[20px] font-semibold"
+              >Green Earth</a
+            >
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul
+              class="menu menu-horizontal px-1 flex gap-5 text-white font-medium"
+            >
+              <li>About</li>
+              <li>Gallery</li>
+              <li>Plant a Tree</li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <a
+              class="btn text-[#15803D] bg-[#FACC15] rounded-full border-[#FACC15]"
+              >Plant a Tree</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="bg-[#CFF0DC] relative overflow-hidden">
+      <!-- img 1 right side -->
+      <img
+        src="./assets/hero-leaf1.png"
+        alt=""
+        class="absolute bottom-0 hidden md:block md:w-[300px] xl:w-[380px] 2xl:w-[500px]"
+      />
+
+      <!-- img 2 left side -->
+      <img
+        src="./assets/hero-leaf2.png"
+        alt=""
+        class="absolute bottom-0 right-0 hidden md:block md:w-[300px] xl:w-[380px] 2xl:w-[500px]"
+      />
+
+      <div class="max-w-[1920px] mx-auto py-[100px]">
+        <div class="text-center">
+          <h3 class="text-[30px] sm:text-5xl font-bold text-[#1F2937] mb-2">
+            Plant a Tree, Grow a Future
+          </h3>
+          <p class="max-w-[538px] text-[#1F2937] mx-auto mb-6">
+            Join our mission to plant 1 million trees and make the Earth greener
+            for future generations.
+          </p>
+          <button
+            class="btn text-[#15803D] bg-[#FACC15] rounded-full border-[#FACC15]"
+          >
+            Get Involved
+          </button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
