@@ -40,6 +40,7 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
+
   <body>
     <nav class="bg-[#15803D]">
       <div class="max-w-[1920px] mx-auto">
@@ -141,11 +142,11 @@
       <div
         class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center"
       >
-        <div class="justify-self-end">
+        <div class="justify-self-center md:justify-self-end">
           <img src="./assets/about.png" alt="" />
         </div>
 
-        <div class="max-w-[528px] justify-self-start">
+        <div class="max-w-[528px] justify-self-center md:justify-self-start">
           <p class="text-[#1F2937]">
             Green Earth is a global tree plantation initiative dedicated to
             fighting climate change. Since our start, we’ve planted over 500,000
@@ -153,7 +154,7 @@
             create habitats for wildlife, and combat global warming.
           </p>
 
-          <ul class="text-[#1F2937] mt-5">
+          <ul class="text-[#1F2937] list-disc list-inside mt-5">
             <li>Restoration of natural habitats</li>
             <li>Improvement of air quality</li>
             <li>Support for local communities</li>
@@ -162,6 +163,84 @@
       </div>
     </section>
 
-    <footer></footer>
+    <!-- our impact section -->
+    <section class="bg-[#CFF0DC] p-[100px] mt-[50px] px-2 sm:mt-[100px]">
+      <div class="max-w-[1920px] mx-auto">
+        <h2 class="mb-10 text-3xl font-bold text-[#1F2937] text-center">
+          Our Impact
+        </h2>
+
+        <div class="flex sm:flex-row flex-col flex-wrap justify-between gap-5">
+          <div
+            class="text-center bg-white rounded-xl p-5 sm:p-10 max-w-[516px] w-full"
+          >
+            <h3 class="text-[#15803D] font-semibold text-[20px] mb-3">500K+</h3>
+            <p class="text-[#1F2937]">Trees Planted</p>
+          </div>
+
+          <div
+            class="text-center bg-white rounded-xl p-5 sm:p-10 max-w-[516px] w-full"
+          >
+            <h3 class="text-[#15803D] font-semibold text-[20px] mb-3">500K+</h3>
+            <p class="text-[#1F2937]">Trees Planted</p>
+          </div>
+
+          <div
+            class="text-center bg-white rounded-xl p-5 sm:p-10 max-w-[516px] w-full"
+          >
+            <h3 class="text-[#15803D] font-semibold text-[20px] mb-3">500K+</h3>
+            <p class="text-[#1F2937]">Trees Planted</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plant a Tree Today section -->
+    <section class="bg-[#166534] py-[50px] sm:py-[100px]">
+      <div class="max-w-[1920px] mx-auto mt-[50px] px-2 sm:mt-[100px]">
+        <h3 class="text-center font-semibold text-3xl mb-10] mb-10 text-white">
+          Plant a Tree Today
+        </h3>
+
+        <div class="p-10 rounded-xl bg-[#15803D] max-w-[650px] w-full mx-auto">
+          <div class="flex flex-col w-full gap-3">
+            <input
+              class="bg-white p-3 rounded-lg border-0"
+              type="text"
+              name=""
+              id=""
+              placeholder="Your Name"
+            />
+            <input
+              class="bg-white p-3 rounded-lg border-0"
+              type="email"
+              name=""
+              id=""
+              placeholder="Your Email Address"
+            />
+            <select class="bg-white p-3 rounded-lg border-0" value="">
+              <option name="" select disabled id="">Number of Trees</option>
+              <option name="" id="">Number of Trees</option>
+            </select>
+            <button
+              class="btn bg-[#FACC15] rounded-full p-3 border-0 text-[#15803D] font-bold mt-2"
+            >
+              Donate Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-[#14532D]">
+      <div class="max-w-[1920px] mx-auto p-8 px-2">
+        <h2 class="text-white text-center">
+          © 2025 Green Earth. All Rights Reserved.
+        </h2>
+      </div>
+    </footer>
+
+    <!-- js connect -->
+    <script src="./script/script.js"></script>
   </body>
 </html>
