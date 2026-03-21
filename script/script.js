@@ -2,6 +2,7 @@ const categoriesBtnsContainer = document.getElementById(
   "category-btn-container",
 );
 const allTreesContainer = document.getElementById("all-trees-contaienr");
+const loadingContainer = document.getElementById("loading-container");
 
 async function loadCategory() {
   const url = "https://openapi.programming-hero.com/api/categories";
@@ -18,20 +19,34 @@ async function loadCategory() {
     // console.log(category);
     const btn = document.createElement("button");
     btn.className =
-      "btn border-1 bg-transparent border-[#15803D] text-[#15803D] w-full";
+      "rounded-md py-1.5 border-1 border-[#15803D] text-[#15803D] w-full";
     btn.innerText = category.category_name;
+    btn.onclick = () => selectCategoryBtn(category.id, btn);
     categoriesBtnsContainer.append(btn);
   });
 }
 
 loadCategory();
 
+function showLoading() {
+  allTreesContainer.innerHTML = "";
+  loadingContainer.classList.remove("hidden");
+}
+
+function hideLoading() {
+  loadingContainer.classList.add("hidden");
+}
+
 async function loadAllTrees() {
+  showLoading();
+
   const url = "https://openapi.programming-hero.com/api/plants";
 
   const res = await fetch(url);
   const data = await res.json();
   // console.log(data);
+  hideLoading();
+
   allTreesDisplay(data.plants);
 }
 
@@ -70,3 +85,45 @@ function allTreesDisplay(trees) {
     allTreesContainer.append(div);
   });
 }
+
+async function selectCategoryBtn(categoryId, btn) {
+  // console.log(categoryId, btn);
+  showLoading();
+
+  // btn style
+  const allCategoriesBtns = document.querySelectorAll(
+    "#category-btn-container button, #all-tree-btn",
+  );
+  allCategoriesBtns.forEach((allCategoryBtn) => {
+    allCategoryBtn.classList.add("text-[#15803D]");
+    allCategoryBtn.classList.remove("bg-[#15803D]", "text-white");
+  });
+
+  btn.classList.add("bg-[#15803D]", "text-white");
+
+  // console.log(allCategoriesBtns);
+
+  const url = `https://openapi.programming-hero.com/api/category/${categoryId}
+`;
+
+  const res = await fetch(url);
+  const data = await res.json();
+  hideLoading();
+  allTreesDisplay(data.plants);
+  // console.log(data);
+}
+
+const allTreesBtn = document.getElementById("all-tree-btn");
+allTreesBtn.addEventListener("click", function () {
+  const allCategoriesBtns = document.querySelectorAll(
+    "#category-btn-container button, #all-tree-btn",
+  );
+  allCategoriesBtns.forEach((allCategoryBtn) => {
+    allCategoryBtn.classList.add("text-[#15803D]");
+    allCategoryBtn.classList.remove("bg-[#15803D]", "text-white");
+  });
+
+  allTreesBtn.classList.add("bg-[#15803D]", "text-white");
+
+  loadAllTrees();
+});
