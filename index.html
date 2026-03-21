@@ -137,13 +137,28 @@
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-          <div class="col-span-1 md:col-span-3 bg-green-100">
-            <h3 class="text-[#] font-semibold text-[20px]">Categories</h3>
+          <div class="col-span-1 md:col-span-3 p-3 rounded-xl bg-red-100">
+            <h3 class="text-[#1F2937] font-semibold text-[20px] py-2">
+              Categories
+            </h3>
+
+            <button
+              id="all-tree-btn"
+              class="btn bg-[#15803D] text-white w-full"
+            >
+              All Trees
+            </button>
+
+            <div id="category-btn-container" class="space-y-2 mt-2"></div>
           </div>
 
-          <div class="col-span-1 md:col-span-6 bg-red-100">tree</div>
+          <div class="col-span-1 md:col-span-6 p-3 rounded-xl bg-green-100">
+            tree
+          </div>
 
-          <div class="col-span-1 md:col-span-3 bg-green-100">cart</div>
+          <div class="col-span-1 md:col-span-3 p-3 rounded-xl bg-red-100">
+            cart
+          </div>
         </div>
       </div>
     </section>
