@@ -136,6 +136,7 @@
           Choose Your Trees
         </h2>
 
+        <!-- category btns section -->
         <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
           <div class="col-span-1 md:col-span-3 p-3 rounded-xl">
             <div class="sticky top-0">
@@ -145,7 +146,7 @@
 
               <button
                 id="all-tree-btn"
-                class="bg-[#15803D] rounded-md py-1.5 border border-[#15803D] text-white w-full"
+                class="bg-[#15803D] rounded-md py-1.5 cursor-pointer border border-[#15803D] text-white w-full"
               >
                 All Trees
               </button>
@@ -154,7 +155,7 @@
             </div>
           </div>
 
-          <div class="col-span-1 md:col-span-6 p-3 rounded-xl bg-green-100">
+          <div class="col-span-1 md:col-span-6 p-3 rounded-xl">
             <div
               id="all-trees-contaienr"
               class="grid grid-cols-1 md:grid-cols-3 gap-4"
@@ -202,8 +203,28 @@
             </div>
           </div>
 
-          <div class="col-span-1 md:col-span-3 p-3 rounded-xl bg-red-100">
-            cart
+          <!-- cart container -->
+          <div class="col-span-1 md:col-span-3 p-4 rounded-xl bg-white">
+            <div
+              class="text-[#1F2937] text-[20px] pb-5 flex gap-3 items-center"
+            >
+              <i class="fa-solid fa-cart-arrow-down"></i>
+              <h2 class="font-semibold">Cart</h2>
+            </div>
+
+            <!-- empty cart massage  -->
+            <div id="empty-cart-massage" class="text-center py-6">
+              <p>There is no product</p>
+            </div>
+
+            <!-- cart content-->
+            <div id="cart-content" class="space-y-3"></div>
+            <div
+              class="flex justify-between items-center font-bold text-[#1F2937] p-3 border-t border-[#8C8C8C] mt-3"
+            >
+              <p>Total:</p>
+              <p id="total-price">0</p>
+            </div>
           </div>
         </div>
       </div>
@@ -249,7 +270,7 @@
     <dialog id="plant_details_modal" class="modal">
       <div class="modal-box">
         <div class="flex justify-between items-center">
-          <h3 id="modal-title" class="text-[#1F2937] font-bold text-[20px]">
+          <h3 id="modal-title" class="text-[#15803D] font-bold text-[20px]">
             Modal Title
           </h3>
           <button
@@ -260,7 +281,7 @@
           </button>
         </div>
 
-        <div class="mt-2">
+        <div class="mt-4">
           <img
             class="h-[180px] rounded-md w-full object-cover"
             id="modal-image"
