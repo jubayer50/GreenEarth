@@ -138,18 +138,20 @@
 
         <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
           <div class="col-span-1 md:col-span-3 p-3 rounded-xl">
-            <h3 class="text-[#1F2937] font-semibold text-[20px] py-2">
-              Categories
-            </h3>
+            <div class="sticky top-0">
+              <h3 class="text-[#1F2937] font-semibold text-[20px] pb-5">
+                Categories
+              </h3>
 
-            <button
-              id="all-tree-btn"
-              class="bg-[#15803D] rounded-md py-1.5 border border-[#15803D] text-white w-full"
-            >
-              All Trees
-            </button>
+              <button
+                id="all-tree-btn"
+                class="bg-[#15803D] rounded-md py-1.5 border border-[#15803D] text-white w-full"
+              >
+                All Trees
+              </button>
 
-            <div id="category-btn-container" class="space-y-2 mt-2"></div>
+              <div id="category-btn-container" class="space-y-2 mt-2"></div>
+            </div>
           </div>
 
           <div class="col-span-1 md:col-span-6 p-3 rounded-xl bg-green-100">
@@ -238,6 +240,67 @@
         </div>
       </div>
     </section>
+
+    <!-- modal section -->
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="plant_details_modal.showModal()">
+      open modal
+    </button> -->
+    <dialog id="plant_details_modal" class="modal">
+      <div class="modal-box">
+        <div class="flex justify-between items-center">
+          <h3 id="modal-title" class="text-[#1F2937] font-bold text-[20px]">
+            Modal Title
+          </h3>
+          <button
+            class="btn btn-sm btn-circle btn-ghost text-[18px]"
+            onclick="document.getElementById('plant_details_modal').close()"
+          >
+            X
+          </button>
+        </div>
+
+        <div class="mt-2">
+          <img
+            class="h-[180px] rounded-md w-full object-cover"
+            id="modal-image"
+            src=""
+            alt=""
+          />
+        </div>
+
+        <div class="flex justify-between items-center mt-4">
+          <p
+            id="modal-category"
+            class="text-[14px] text-[#15803D] font-semibold bg-[#DCFCE7] px-2 py-1 rounded-full"
+          >
+            badge
+          </p>
+
+          <p id="modal-price" class="font-bold">price</p>
+        </div>
+
+        <p id="modal-description" class="text-[14px] mt-3 line-clamp-2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+          voluptatem fuga dolorum iste odio accusamus.
+        </p>
+
+        <div class="mt-4">
+          <button
+            class="bg-[#15803D] font-bold text-white py-2 w-full rounded-full"
+          >
+            Add to Cart
+          </button>
+        </div>
+
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
 
     <!-- our impact section -->
     <section class="bg-[#CFF0DC] p-[100px] mt-[50px] px-2 sm:mt-[100px]">

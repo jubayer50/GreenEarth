@@ -3,6 +3,14 @@ const categoriesBtnsContainer = document.getElementById(
 );
 const allTreesContainer = document.getElementById("all-trees-contaienr");
 const loadingContainer = document.getElementById("loading-container");
+const plantDetailModal = document.getElementById("plant_details_modal");
+
+// modal
+const modalTitle = document.getElementById("modal-title");
+const modalImage = document.getElementById("modal-image");
+const modalCategory = document.getElementById("modal-category");
+const modalPrice = document.getElementById("modal-price");
+const modalDescription = document.getElementById("modal-description");
 
 async function loadCategory() {
   const url = "https://openapi.programming-hero.com/api/categories";
@@ -59,10 +67,10 @@ function allTreesDisplay(trees) {
     div.className = "bg-white rounded-lg p-2";
     div.innerHTML = `
                 <div>
-                  <img class="h-40 w-full object-cover rounded-md" src=${tree.image} alt="" />
+                  <img class="h-[180px] w-full object-cover rounded-md" src=${tree.image} alt="" />
                 </div>
                 <div class="mt-3 space-y-3">
-                  <h4 class="font-semibold text-[14px] text-[#1F2937]">
+                  <h4 class="font-semibold text-[14px] text-[#1F2937] hover:text-[#15803D]" onclick='openModal(${tree.id})'>
                    ${tree.name}
                   </h4>
                   <p class="text-[12px] text-[#1F2937] line-clamp-2">
@@ -114,6 +122,7 @@ async function selectCategoryBtn(categoryId, btn) {
 }
 
 const allTreesBtn = document.getElementById("all-tree-btn");
+
 allTreesBtn.addEventListener("click", function () {
   const allCategoriesBtns = document.querySelectorAll(
     "#category-btn-container button, #all-tree-btn",
@@ -127,3 +136,22 @@ allTreesBtn.addEventListener("click", function () {
 
   loadAllTrees();
 });
+
+// modal
+async function openModal(treeId) {
+  // console.log(treeId);
+
+  const url = `https://openapi.programming-hero.com/api/plant/${treeId}`;
+
+  const res = await fetch(url);
+  const data = await res.json();
+  const treeDetails = data.plants;
+
+  modalTitle.innerText = treeDetails.name;
+  modalImage.src = treeDetails.image;
+  modalCategory.innerText = treeDetails.category;
+  modalPrice.innerText = treeDetails.price;
+  modalDescription.innerText = treeDetails.description;
+
+  plantDetailModal.showModal();
+}
