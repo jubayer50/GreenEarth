@@ -157,6 +157,10 @@ async function openModal(treeId) {
   modalPrice.innerText = treeDetails.price;
   modalDescription.innerText = treeDetails.description;
 
+  document.getElementById("modal-btn").onclick = () => {
+    addToCart(treeDetails.id, treeDetails.name, treeDetails.price);
+  };
+
   plantDetailModal.showModal();
 }
 
